@@ -12,4 +12,4 @@ payload = {
 response = requests.post(os.environ["SHEET_URL"], json=payload, timeout=30)
 print(response.status_code, response.text)
 if response.text != "OK":
-raise SystemExit("The sheet script said: " + response.text)
+	raise SystemExit("The sheet script said: " + response.text)
