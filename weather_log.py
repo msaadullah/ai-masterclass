@@ -1,6 +1,8 @@
 import os
 import requests
-url ="https://api.open-meteo.com/v1/forecast?latitude=24.86&longitude=67.01&current_weather=true"
+url =
+"https://api.open-meteo.com/v1/forecast?latitude=24.86&longitude=67.01&current_weathe
+r=true"
 weather = requests.get(url, timeout=30).json()["current_weather"]
 payload = {
 "city": "Karachi",
@@ -10,4 +12,4 @@ payload = {
 response = requests.post(os.environ["SHEET_URL"], json=payload, timeout=30)
 print(response.status_code, response.text)
 if response.text != "OK":
-	raise SystemExit("The sheet script said: " + response.text)
+raise SystemExit("The sheet script said: " + response.text)
