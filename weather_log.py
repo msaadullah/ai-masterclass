@@ -1,7 +1,6 @@
 import os
 import requests
-url =
-"https://api.open-meteo.com/v1/forecast?latitude=24.86&longitude=67.01&current_weather=true"
+url =("https://api.open-meteo.com/v1/forecast?latitude=24.86&longitude=67.01&current_weather=true")
 weather = requests.get(url, timeout=30).json()["current_weather"]
 payload = {
 "city": "Karachi",
